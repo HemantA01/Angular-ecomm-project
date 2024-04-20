@@ -1,0 +1,41 @@
+<ngb-carousel class="carousel-bgcolor" *ngIf="popularProducts">
+	<ng-template *ngFor="let product of popularProducts" ngbSlide>
+		<div class="picsum-img-wrapper">
+			<a routerLink="/details/{{product.id}}">
+				<img class="product-header-img" src="{{product.productImageUrl}}" alt="Random first slide" />
+			</a>
+		</div>
+		<div class="carousel-caption carousel-capt-color">
+			<h3>{{product.productName}}</h3>
+			<p>{{product.productDesc}}</p>
+		</div>
+	</ng-template>
+
+</ngb-carousel>
+<div class="container product-list-wrapper prod-list-pad">
+	<h3>Trendy Products</h3>
+	<div class="row">
+		<div class="col-sm-3" *ngFor="let item of trendyProducts;">
+			<div class="product-item">
+				<div style="text-align: center;">
+					<a routerLink="/details/{{item.id}}">
+						<img src="{{item.productImageUrl}}" alt="" />
+					</a>
+				</div>
+				<div class="product-details">
+					<h6 class="prod-name-head">{{item.productName}}</h6>
+					<div class="product-price">
+						<h6>Price: ₹ {{item.productPrice}} / {{item.productUnit}}</h6>
+					</div>
+					<div class="product-color">
+						<h6>Color: {{item.productColor}}</h6>
+					</div>
+				</div>
+				<div class="product-footer">
+					<a routerLink="/details/{{item.id}}" class="text-uppercase">View Details</a>
+					<a href="" class="text-uppercase">Add to Cart</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container-fluid product-details">
+    <div class="row" *ngIf="productData">
+        <div class="col-md-6 prod-style">
+            <img src="{{productData.productImageUrl}}" alt="search item" class="img-style" />
+        </div>
+        <div class="col-md-6">
+            <h1>{{productData.productName}}</h1>
+            <h3>Price: {{productData.productPrice}}</h3>
+            <div>
+                Color: <h5 [style.backgroundColor]="productData.productColor" class="product-color"></h5>
+            </div>
+            <h6>Category: {{productData.productCategory}}</h6>
+            <h6>Description: {{productData.productDesc}}</h6>
+            <button *ngIf="!removeCart" class="form-button text-uppercase" (click)="AddToCart()">Add To Cart</button>&emsp; 
+            <button *ngIf="removeCart" class="form-button text-uppercase" (click)="removeToCart(productData.id)">Remove Cart</button>&emsp; 
+            <button class="form-button text-uppercase">Buy Now</button>
+            <div class="quantity-group">
+                <button (click)="handleQty('min')">-</button>
+                <input type="text" value="{{productQty}}" />
+                <button (click)="handleQty('add')">+</button>
+            </div>
+        </div>
+    </div>
+</div>

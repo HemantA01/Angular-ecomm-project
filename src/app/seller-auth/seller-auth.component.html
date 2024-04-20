@@ -1,0 +1,128 @@
+<div class="container-fluid">
+    <!--Sign up Form-->
+    <div class="card p-3 txt-clr1" style="text-align: center;">
+        <h2>{{lblSellerHeader}}</h2>
+    </div>
+    <div class="card-body p-1" *ngIf="!showLogin">
+        <form [formGroup]="frmSeller" (ngSubmit)="submitData(frmSeller.value)" >
+            <div class="row p-3">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" formControlName="userFname" placeholder="Enter First Name" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" formControlName="userLname" placeholder="Enter Last Name" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="text" class="form-control" formControlName="userContact" placeholder="Enter Contact Name" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Email Id</label>
+                        <input type="text" class="form-control" placeholder="Enter Email Id"  formControlName="userEmail" />
+                    </div>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" class="form-control" placeholder="Enter User Name" formControlName="username" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" formControlName="userpass" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confpass" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Nationality</label>
+                        <input type="text" class="form-control" placeholder="Enter nationality"  formControlName="nationality" />
+                    </div>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Temporary Address</label>
+                        <input type="text" class="form-control" placeholder="Enter Temporary Address" formControlName="tempaddress" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Permanemt Address</label>
+                        <input type="text" class="form-control" placeholder="Enter Permanent Address" formControlName="permanentaddress" />
+                    </div>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-md-9">&nbsp;</div>
+                <div class="col-md-3">
+                    <button class="btn btn-warning text-uppercase" >Cancel</button>
+                    <button class="btn btn-primary mx-2 text-uppercase" >Submit</button>
+                </div> 
+            </div>
+            <div class="row p-0">
+                <div class="col-md-9">&nbsp;</div>
+                <div class="col-md-3">
+                    <label>Already have a seller? <a style="cursor: pointer;" (click)="openLogin()">Sign In</a></label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--Login Form-->
+    <div class="card-body p-1" *ngIf="showLogin">
+        <form  [formGroup]="frmSellerLogin" (ngSubmit)="sellerLogin(frmSellerLogin.value)">
+            <div class="row mb-3 p-3">
+                <label class="col-sm-4"></label>
+                <label for="inputEmail3" class="col-sm-1 col-form-label">Username</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control" formControlName="username">
+                </div>
+                <label class="col-sm-4"></label>
+            </div>
+            <div class="row mb-3 p-1">
+                <label class="col-sm-4"></label>
+                <label for="inputPassword3" class="col-sm-1 col-form-label">Password</label>
+                <div class="col-sm-3">
+                  <input type="password" class="form-control" formControlName="userpass">
+                </div>
+                <label class="col-sm-4"></label>
+            </div>
+            <div class="row mb-3 p-1"> 
+                <p class="autherr-p">{{loginAuthError}}</p>
+            </div>
+            <div class="row mb-3 p-3">
+                <label class="col-sm-6"></label>
+                <div class="col-sm-1">
+                    <button class="btn btn-primary">Sign in</button>
+                </div>
+                <label class="col-sm-5"></label>
+            </div>
+            <div class="row p-0">
+                <label class="col-sm-5"></label>
+                <div class="col-sm-4">
+                    <label>New User? <a style="cursor: pointer;" (click)="openSignup()">Click here to Sign Up</a></label>
+                </div>
+                <label class="col-sm-4"></label>
+            </div>
+        </form>
+    </div>
+</div>

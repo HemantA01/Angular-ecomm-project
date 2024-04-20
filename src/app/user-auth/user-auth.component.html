@@ -1,0 +1,219 @@
+<div class="container-fluid">
+    <div *ngIf="!showLogin" class="user-signup">
+        <div class="row" style="text-align: center;">
+            <h1 style="color: #9f0b48;">User Sign Up</h1>
+        </div>
+        <div class="card-body p-1">
+            <form [formGroup]="frmUser" (ngSubmit)="signup(frmUser.value)">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <label>Salutation</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <select id="ddlSalutation" (change)="changeSalutation($event)" class="form-select" fromControlName="userSalutation">
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Ms.">Ms.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Dr.">Dr.</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="text"  placeholder="Enter User Name" class="form-control" formControlName="userName"
+                            [ngClass]="{'is-invalid':submitted && frmUser.controls.userName.errors}" /> 
+                            <div *ngIf="submitted && frmUser.controls.userName.errors" class="text-danger">
+                                <div *ngIf="submitted && frmUser.controls.userName.errors.required">
+                                    User name is required!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>User Email Id</label>
+                            <input type="text"  placeholder="Enter User Email Id" class="form-control" formControlName="userEmailId" 
+                            [ngClass]="{'is-invalid':submitted && frmUser.controls.userEmailId.errors}" /> 
+                            <div *ngIf="submitted && frmUser.controls.userEmailId.errors" class="text-danger">
+                                <div *ngIf="submitted && frmUser.controls.userEmailId.errors.required">
+                                    Email Id is required!
+                                </div>
+                                <div *ngIf="submitted && frmUser.controls.userEmailId.errors.email">
+                                    Email Id is not in valid format!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>User Mobile</label>
+                            <input type="text"  placeholder="Enter User Mobile Number" maxlength="10" class="form-control" formControlName="userMobile" 
+                            [ngClass]="{'is-invalid': submitted && frmUser.controls.userMobile.errors}" /> 
+                            <div *ngIf="submitted && frmUser.controls.userMobile.errors" class="text-danger">
+                                <div *ngIf="submitted && frmUser.controls.userMobile.errors.required">
+                                    Mobile number is required!
+                                </div>
+                                <div *ngIf="submitted && frmUser.controls.userMobile.errors.minlength">
+                                    Length at least 10 characters long                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>User Password</label>
+                            <input type="password" placeholder="Enter User Password" class="form-control" formControlName="userPassword" 
+                            [ngClass]="{'is-invalid': submitted && frmUser.controls.userPassword.errors}" /> 
+                            <div *ngIf="submitted && frmUser.controls.userPassword.errors" class="text-danger">
+                                <div *ngIf="submitted && frmUser.controls.userPassword.errors.required">
+                                    Passowrd is required!
+                                </div>
+                                <div *ngIf="submitted && frmUser.controls.userPassword.errors.minlength">
+                                    Passowrd shouuld be betweeen 8 - 14 characters.
+                                </div>
+                                <div *ngIf="submitted && frmUser.controls.userPassword.errors.maxlength">
+                                    Passowrd shouuld be betweeen 8 - 14 characters.
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Confirm User Password</label>
+                            <input type="password"  placeholder="Enter User Password" class="form-control" formControlName="userConfPassword" 
+                            [ngClass]="{'is-invalid':submitted && frmUser.controls.userConfPassword.errors}" /> 
+                            <div *ngIf="submitted && frmUser.controls.userConfPassword.errors" class="text-danger">
+                                <div *ngIf="submitted && frmUser.controls.userConfPassword.errors.required">
+                                    Confirm Passowrd is required!
+                                </div>
+                                <div *ngIf="submitted && frmUser.controls.userConfPassword.errors.minlength">
+                                    Passowrd shouuld be betweeen 8 - 14 characters.
+                                </div>
+                                <div *ngIf="submitted && frmUser.controls.userConfPassword.errors.maxlength">
+                                    Passowrd shouuld be betweeen 8 - 14 characters.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>User Address</label>
+                            <input type="text"  placeholder="Enter User Address" class="form-control" formControlName="userAddress" 
+                            [ngClass]="{'is-invalid':submitted && frmUser.controls.userAddress.errors}" /> 
+                            <div *ngIf="submitted && frmUser.controls.userAddress.errors" class="text-danger">
+                                <div *ngIf="submitted && frmUser.controls.userAddress.errors.required">
+                                    Address is required!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <label>Gender</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="userGender" id="rdoGender1" value="Male" fromControlName="userGender" checked>
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="userGender" id="rdoGender2" formControlName="userGender" value="Female">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="userGender" id="rdoGender3" formControlName="userGender" value="Others">
+                                <label class="form-check-label" for="inlineRadio2">Not to disclose</label>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row a-common-form">
+                    <div class="col-md-9">&nbsp;</div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary text-uppercase">Submit</button>
+                        <p>Already have account ? <a style="cursor: pointer;" (click)="openLogin()">Login here</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>  
+    </div>
+    <div *ngIf="showLogin" class="user-login">
+        <div class="row" style="text-align: center;">
+            <h1 style="color: #9f0b48;">User Login</h1>
+        </div>
+        <div class="card-body p-1">
+            <form [formGroup]="frmUserLogin" (ngSubmit)="userLogin(frmUserLogin.value)">
+                <div class="row mb-3 p-3">
+                    <label class="col-sm-4"></label>
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">EmailId</label>
+                    <div class="col-sm-3">
+                      <input type="text" #userNameLogin [ngClass]="{'is-invalid':submitted && frmUserLogin.controls.username.errors}" class="form-control" formControlName="username" />
+                      <!-- <span class="invalid-input" *ngIf="userNameLogin.invalid && userNameLogin.touched">Username is invalid</span> -->
+                      <!-- <label class="text-danger" *ngIf="getError(frmUserLogin.get('username'))">
+                        {{   getError(frmUserLogin.get('username'))   }}
+                      </label> -->
+                      <div *ngIf="submitted && frmUserLogin.controls.username.errors" class="text-danger">
+                        <div *ngIf="submitted && frmUserLogin.controls.username.errors.required">
+                            Email Id is required!
+                        </div>
+                        <div *ngIf="submitted && frmUserLogin.controls.username.errors.email">
+                            Email Id is not valid!
+                        </div>
+                      </div>
+                    </div>
+                    <label class="col-sm-4"></label>
+                    
+                </div>
+                <div class="row mb-3 p-1"> 
+                    <label class="col-sm-4"></label>
+                    <label for="inputPassword3" class="col-sm-1 col-form-label">Password</label>
+                    <div class="col-sm-3">
+                      <input type="password" [ngClass]="{'is-invalid':submitted && frmUserLogin.controls.password.errors}" class="form-control" formControlName="password">
+                      <div *ngIf="submitted && frmUserLogin.controls.password.errors" class="text-danger">
+                        <div *ngIf="submitted && frmUserLogin.controls.password.errors.required">
+                            Passowrd should not be left blank
+                        </div>
+                        <div *ngIf="submitted && frmUserLogin.controls.password.errors.minlength">
+                            Passowrd should be 6 - 14 characters long
+                        </div>
+                        <div *ngIf="submitted && frmUserLogin.controls.password.errors.maxlength">
+                            Passowrd should be 6 - 14 characters long
+                        </div>
+                        <!-- <div *ngIf="submitted && frmUserLogin.controls.password.errors.pattern">
+                            Password entered is not in the correct format.
+                        </div> -->
+                      </div>
+                    </div>
+                    
+                    <label class="col-sm-4"></label>
+                </div>
+                <div class="row mb-3 p-1"> 
+                    <label class="col-sm-5"></label>
+                    <div class="col-sm-3">
+                        <p class="invalid-input">{{authError}}</p>
+                    </div>
+                    <label class="col-sm-4"></label>
+                </div>
+                <div class="row mb-3 p-3">
+                    <label class="col-sm-6"></label>
+                    <div class="col-sm-1">
+                        <!-- <button class="" [disabled]="frmUserLogin.invalid">Sign in</button> -->
+                        <button class="btn btn-primary">Sign in</button>
+                    </div>
+                    <label class="col-sm-5"></label>
+                </div>
+                <div class="row p-0  a-common-form">
+                    <label class="col-sm-5"></label>
+                    <div class="col-sm-4">
+                        <label>New User? <a (click)="openSignUp()">Click here to Sign Up</a></label>
+                    </div>
+                    <label class="col-sm-4"></label>
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>

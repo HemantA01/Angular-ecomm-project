@@ -1,0 +1,10 @@
+.a-common-form a{
+    color: #9f0b48;
+    cursor: pointer;
+}
+.invalid-input{
+    color: crimson;
+}
+button:disabled{
+    cursor: not-allowed;
+}

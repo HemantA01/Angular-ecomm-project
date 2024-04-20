@@ -1,0 +1,23 @@
+.btn-spacing1{
+    margin-right: 2px;
+}
+.txt-clr1{
+    color: #9f0b48; 
+}
+.suggested-result {
+    position: absolute;
+    //  display: list-item !important; 
+    z-index: 10;
+    background-color: white;
+    top: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.suggested-result li{
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+.suggested-result li a{
+    cursor: pointer;
+    color:#9f0b48;
+}
