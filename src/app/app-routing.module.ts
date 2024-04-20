@@ -10,6 +10,7 @@ import { SearchProductComponent } from './search-product/search-product.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CartSummaryPageComponent } from './cart-summary-page/cart-summary-page.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'search-prod/:query', component:SearchProductComponent},
   {path:'details/:productId', component:ProductDetailsComponent},
   {path:'user-auth', component: UserAuthComponent},
-  {path:'cart-summary', component: CartSummaryPageComponent}
+  {path:'cart-summary', component: CartSummaryPageComponent},
+  {path:'checkout', component: CheckoutComponent}
 
 ];
 

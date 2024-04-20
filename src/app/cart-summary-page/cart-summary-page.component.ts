@@ -53,4 +53,7 @@ export class CartSummaryPageComponent implements OnInit {
       console.log('price summ: ',this.PriceSummary);
     });
   }
+  checkOut(){
+    this.router.navigate(['checkout']);
+  }
 }
