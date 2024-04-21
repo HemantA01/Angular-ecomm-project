@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { ICart, IProductDetails } from '../interface/seller-details';
+import { ICart, IOrderDetails, IProductDetails } from '../interface/seller-details';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -86,7 +86,10 @@ export class ProductService {
     //debugger;
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this._http.get<any[]>(`${this.API_URL}/cart?userId=`+userData[0].id);
-           
+    return this._http.get<any[]>(`${this.API_URL}/cart?userId=`+userData[0].id);           
+  }
+  orderNow(data:IOrderDetails){
+    debugger;
+    return this._http.post(`${this.API_URL}/orders`, data);
   }
 }

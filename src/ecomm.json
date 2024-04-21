@@ -511,5 +511,22 @@
       "productId": 2,
       "id": 14
     }
+  ],
+  "orders": [
+    {
+      "firstName": "Swati",
+      "lastName": "Kumari",
+      "email": "swatik@yopmail.xom",
+      "mobile": "5555555555",
+      "address": "A-21, darul Enclave",
+      "address2": "Mayur Vihar, Noida",
+      "state": "Uttar Pradesh",
+      "country": "India",
+      "pincode": "201301",
+      "paymentmode": "COD",
+      "totalPrice": 20553.125,
+      "userId": 3,
+      "id": 1
+    }
   ]
 }

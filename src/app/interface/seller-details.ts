@@ -65,4 +65,18 @@ export interface IPriceSummary{
     count: number
 }
 
+export interface IOrderDetails{
+    firstName: string;
+    lastName: string;
+    email: string;
+    contact: string;
+    address: string;
+    address2: string;
+    state: string;
+    country: string;
+    pincode: number;
+    paymentmode: string;
+    totalPrice: number;
+    userId: number;
+}
 
