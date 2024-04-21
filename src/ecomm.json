@@ -527,6 +527,21 @@
       "totalPrice": 20553.125,
       "userId": 3,
       "id": 1
+    },
+    {
+      "firstName": "Swati",
+      "lastName": "Mishra",
+      "email": "swatik@yopmail.com",
+      "mobile": "5555555555",
+      "address": "A-12, Avenue Street",
+      "address2": "London",
+      "state": "London",
+      "country": "UK",
+      "pincode": "55441",
+      "paymentmode": "COD",
+      "totalPrice": 20553.125,
+      "userId": 3,
+      "id": 2
     }
   ]
 }

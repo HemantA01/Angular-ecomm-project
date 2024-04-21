@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ProductService } from '../service/product.service';
 import { IOrderDetails, IPriceSummary } from '../interface/seller-details';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -19,7 +20,7 @@ export class CheckoutComponent implements OnInit {
     total: 0,
     count: 0
   }
-  constructor(private fb: FormBuilder, private productapi: ProductService) {
+  constructor(private fb: FormBuilder, private productapi: ProductService, private route: Router) {
 
   }
   ngOnInit(): void{
@@ -78,6 +79,7 @@ export class CheckoutComponent implements OnInit {
         debugger;
         if(result){
           alert('Order placed successfully');
+          this.route.navigate(['my-orders']);
         }else{
           alert('error');
         }

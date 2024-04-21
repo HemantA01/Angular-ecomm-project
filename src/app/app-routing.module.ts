@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CartSummaryPageComponent } from './cart-summary-page/cart-summary-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'details/:productId', component:ProductDetailsComponent},
   {path:'user-auth', component: UserAuthComponent},
   {path:'cart-summary', component: CartSummaryPageComponent},
-  {path:'checkout', component: CheckoutComponent}
+  {path:'checkout', component: CheckoutComponent},
+  {path:'my-orders', component: MyOrdersComponent}
 
 ];
 
