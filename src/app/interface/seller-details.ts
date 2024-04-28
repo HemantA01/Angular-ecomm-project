@@ -78,5 +78,6 @@ export interface IOrderDetails{
     paymentmode: string;
     totalPrice: number;
     userId: number;
+    id: number | undefined;
 }
 

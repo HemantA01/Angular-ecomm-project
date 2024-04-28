@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ProductService } from '../service/product.service';
-import { IOrderDetails, IPriceSummary } from '../interface/seller-details';
+import { ICart, IOrderDetails, IPriceSummary } from '../interface/seller-details';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
   frmCheckout!: FormGroup;
-  cartData: any[] | undefined;
+  cartData: ICart[] | undefined;
+  orderMsg: string | undefined;
   PriceSummary: IPriceSummary = {
     price: 0,
     taxamount: 0,
@@ -72,16 +73,26 @@ export class CheckoutComponent implements OnInit {
       let orderData: IOrderDetails = {
         ...data,
         totalPrice: this.PriceSummary.total,
-        userId
+        userId,
+        id: undefined
       }
       debugger;
+      this.cartData?.forEach((item) => {
+        setTimeout(() => {
+          item.id && this.productapi.deleteCartItems(item.id);
+        }, 600);
+      })
       this.productapi.orderNow(orderData).subscribe((result) => {
         debugger;
         if(result){
-          alert('Order placed successfully');
-          this.route.navigate(['my-orders']);
+          //alert('Order placed successfully');
+          this.orderMsg = 'Your order has been placed successfully';
+          setTimeout(() => {
+            this.route.navigate(['my-orders']);
+            this.orderMsg=undefined;  
+          }, 4000);
         }else{
-          alert('error');
+          //alert('error');
         }
       })
     }

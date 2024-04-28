@@ -482,34 +482,6 @@
       "userId": 5,
       "productId": 1,
       "id": 10
-    },
-    {
-      "productName": "boAt 15 Airdopes",
-      "productUnit": "Piece",
-      "productPrice": "1000",
-      "productCategory": "Electronics",
-      "productSubcategory": "Earphones",
-      "productColor": "Red",
-      "productDesc": "This is a wireless earbuds with microphone included and one touch voice assistant",
-      "productImageUrl": "https://i.gadgets360cdn.com/products/large/boat-airdopes-431-black-720x-800x1270-1612018464.jpg?downsize=*:420&output-quality=80",
-      "prodQuantity": 1,
-      "userId": 3,
-      "productId": 1,
-      "id": 13
-    },
-    {
-      "productName": "boAt Airdopes 125",
-      "productUnit": "Piece",
-      "productPrice": "2250",
-      "productCategory": "Electronics",
-      "productSubcategory": "Earphones",
-      "productColor": "Black/Red/White",
-      "productDesc": "This is a wireless earbuds with microphone, fast charging, bass sound and vibrant colors.",
-      "productImageUrl": "https://www.boat-lifestyle.com/cdn/shop/files/AD125.775-removebg-preview_500x.png?v=1685949416",
-      "prodQuantity": 9,
-      "userId": 3,
-      "productId": 2,
-      "id": 14
     }
   ],
   "orders": [
@@ -542,6 +514,81 @@
       "totalPrice": 20553.125,
       "userId": 3,
       "id": 2
+    },
+    {
+      "firstName": "Swati",
+      "lastName": "Kathuriya",
+      "email": "swatik@yopmail.com",
+      "mobile": "9987412588",
+      "address": "S-23, Downing Street",
+      "address2": "Mumbai",
+      "state": "Maharashtra",
+      "country": "India",
+      "pincode": "774411",
+      "paymentmode": "Debit Card",
+      "totalPrice": 20553.125,
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "firstName": "Swati",
+      "lastName": "kaparia",
+      "email": "swatik@yopmail.com",
+      "mobile": "7845120000",
+      "address": "124578 Street-A",
+      "address2": "Umang Enclave",
+      "state": "Jahrkhand",
+      "country": "India",
+      "pincode": "554477",
+      "paymentmode": "Paytm",
+      "totalPrice": 20553.125,
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "firstName": "Swati",
+      "lastName": "Kumari",
+      "email": "swatik@yopmail.com",
+      "mobile": "9955887744",
+      "address": "A-21, Umang Enclave",
+      "address2": "Nirman Vihar",
+      "state": "Delhi",
+      "country": "India",
+      "pincode": "110078",
+      "paymentmode": "Credit Card",
+      "totalPrice": 24157.6875,
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "firstName": "Swati",
+      "lastName": "K",
+      "email": "swatik@yopmail.com",
+      "mobile": "8855220011",
+      "address": "A-21/22, Sec-12, Noida",
+      "address2": "",
+      "state": "Uttar Pradesh",
+      "country": "India",
+      "pincode": "201303",
+      "paymentmode": "COD",
+      "totalPrice": 34750,
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "firstName": "Swati",
+      "lastName": "K",
+      "email": "swatik@yopmail.com",
+      "mobile": "8877445522",
+      "address": "1234 Downing Street",
+      "address2": "",
+      "state": "bengaluru",
+      "country": "India",
+      "pincode": "74411",
+      "paymentmode": "Paytm",
+      "totalPrice": 5875,
+      "userId": 3,
+      "id": 8
     }
   ]
 }

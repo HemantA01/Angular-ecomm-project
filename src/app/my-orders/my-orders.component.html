@@ -23,89 +23,22 @@
         </div>
     </div>
     <hr />
-    <div class="row mt-2">
+    <div class="row mt-2" *ngFor="let order of orderData;">
         <div class="col-md-2 text-center">
             <img src="../../assets/Default Images/myorders.png" alt="My Orders" weight="100" height="100" />
         </div>
         <div class="col-md-2 text-center">
-            <span>#100</span>
+            <span>#{{order.id}}</span>
         </div>
         <div class="col-md-2 text-center">
-            <span>₹ 21000</span>
+            <span>₹ {{order.totalPrice}}</span>
         </div>
         <div class="col-md-2 text-center">
-            <span>In Process</span>
+            <span>{{order.paymentmode}}</span>
         </div>
         <div class="col-md-2">
-            <button class="form-control btn btn-outline-primary">Cancel Order</button>
+            <button class="form-control btn btn-outline-primary" (click)="cancelOrder(order.id)">Cancel Order</button>
         </div>
     </div>
-    <div class="row mt-2">
-        <div class="col-md-2 text-center">
-            <img src="../../assets/Default Images/myorders.png" alt="My Orders" weight="100" height="100" />
-        </div>
-        <div class="col-md-2 text-center">
-            <span>#200</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>₹ 31000</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>Ordered</span>
-        </div>
-        <div class="col-md-2">
-            <button class="form-control btn btn-outline-primary">Cancel Order</button>
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-md-2 text-center">
-            <img src="../../assets/Default Images/myorders.png" alt="My Orders" weight="100" height="100" />
-        </div>
-        <div class="col-md-2 text-center">
-            <span>#300</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>₹ 25000</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>In Transit</span>
-        </div>
-        <div class="col-md-2">
-            <button class="form-control btn btn-outline-primary">Cancel Order</button>
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-md-2 text-center">
-            <img src="../../assets/Default Images/myorders.png" alt="My Orders" weight="100" height="100" />
-        </div>
-        <div class="col-md-2 text-center">
-            <span>#400</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>₹ 41000</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>Order Placed</span>
-        </div>
-        <div class="col-md-2">
-            <button class="form-control btn btn-outline-primary">Cancel Order</button>
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-md-2 text-center">
-            <img src="../../assets/Default Images/myorders.png" alt="My Orders" weight="100" height="100" />
-        </div>
-        <div class="col-md-2 text-center">
-            <span>#500</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>₹ 33000</span>
-        </div>
-        <div class="col-md-2 text-center">
-            <span>Delivered</span>
-        </div>
-        <div class="col-md-2">
-            <button class="form-control btn btn-outline-primary">Cancel Order</button>
-        </div>
-    </div>
+    
 </div>

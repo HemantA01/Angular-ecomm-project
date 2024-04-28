@@ -2,7 +2,7 @@
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
-                <div class="card">
+                <div class="card" *ngIf="isCartEmpty==='data'">
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-lg-7">
@@ -152,6 +152,11 @@
 
                         </div>
 
+                    </div>
+                </div>
+                <div class="card" *ngIf="isCartEmpty==='blank'">
+                    <div class="card-body">
+                        <h3>Your cart is empty</h3>
                     </div>
                 </div>
             </div>

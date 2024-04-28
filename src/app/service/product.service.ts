@@ -89,7 +89,21 @@ export class ProductService {
     return this._http.get<any[]>(`${this.API_URL}/cart?userId=`+userData[0].id);           
   }
   orderNow(data:IOrderDetails){
-    debugger;
     return this._http.post(`${this.API_URL}/orders`, data);
+  }
+  orderList(){
+    let userStore = localStorage.getItem('user');
+    let userData = userStore && JSON.parse(userStore)
+    return this._http.get<IOrderDetails[]>(`${this.API_URL}/orders?userId=`+userData[0].id);
+  }
+  deleteCartItems(cartId: number){
+    return this._http.delete(`${this.API_URL}/cart/`+cartId, {observe: 'response'}).subscribe((result) => {
+      if(result){
+        this.cartData.emit([]);
+      }
+    });
+  }
+  cancelOrder(orderId: number | undefined){
+    return this._http.delete(`${this.API_URL}/orders/`+orderId);
   }
 }

@@ -10,6 +10,7 @@ import { ICart, IPriceSummary } from '../interface/seller-details';
 })
 export class CartSummaryPageComponent implements OnInit {
   cartData: any[] | undefined;
+  isCartEmpty: string | undefined = 'blank';
   PriceSummary: IPriceSummary = {
     price: 0,
     taxamount: 0,
@@ -31,8 +32,10 @@ export class CartSummaryPageComponent implements OnInit {
     //debugger;
     this.productapi.currentCart().subscribe((result) => {
      // debugger;
+     if(result.length > 0){
       console.log('cart result: ', result);
       this.cartData = result;
+      this.isCartEmpty = 'data';
       let price = 0;
       let i = 0;
       //debugger;
@@ -51,6 +54,10 @@ export class CartSummaryPageComponent implements OnInit {
       //this.PriceSummary.total = Number( this.PriceSummary.price) + Number(this.PriceSummary.discount)  + Number(this.PriceSummary.deliverychanrges)  - Number( this.PriceSummary.taxamount);
       this.PriceSummary.total = (this.PriceSummary.price + 100  + price/16)  - price/10;
       console.log('price summ: ',this.PriceSummary);
+     }else{
+      debugger;
+      this.isCartEmpty='blank';
+     }
     });
   }
   checkOut(){
