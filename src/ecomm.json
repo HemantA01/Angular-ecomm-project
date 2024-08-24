@@ -482,6 +482,20 @@
       "userId": 5,
       "productId": 1,
       "id": 10
+    },
+    {
+      "productName": "MONTEX DIGITAL 014 Earbuds",
+      "productUnit": "Piece",
+      "productPrice": "4999",
+      "productCategory": "Electronics",
+      "productSubcategory": "Earphones",
+      "productColor": "Red",
+      "productDesc": "Neckband with 15 mimutes fast charge in 15 minutes 60 hours playback time",
+      "productImageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/v/g/m/014-fast-quick-charge-in-15-mintes-60hrs-playtime-neckband-original-imagwke4pfuzzuyd.jpeg?q=70",
+      "prodQuantity": 7,
+      "userId": 3,
+      "productId": 4,
+      "id": 11
     }
   ],
   "orders": [

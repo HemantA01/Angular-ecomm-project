@@ -11,7 +11,7 @@
               <input class="form-control me-2" type="text" #searchInput placeholder="Search" aria-label="Search" (keyup)="searchProducts($event)" (blur)="hideSearch()" value="{{productName}}" >
               <button type="submit" class="btn btn-outline-success" (click)="submitSearch(searchInput.value)">Search</button>
               <ul class="suggested-result" *ngIf="searchResult">
-                <li *ngFor="let item of searchResult;">
+                <li *ngFor="let item of searchResult;" style="text-decoration: none;">
                   <a style="cursor: pointer;" (click)="getProductName(item.productName);" (mousedown)="redirectToDetails(item.id)">{{item.productName}}</a>
                 </li>
               </ul> 
