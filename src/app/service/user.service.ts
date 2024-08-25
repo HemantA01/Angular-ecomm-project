@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserService {
-  API_URL = 'https://ecomm-orcin.vercel.app/';
+  API_URL = 'https://ecomm-orcin.vercel.app';
   invalidUserAuth = new EventEmitter<boolean>(false); 
   constructor(private _http: HttpClient, private router: Router) { }
   userSignUp(user: IUserSignUp){

@@ -9,7 +9,7 @@ import { ResourceLoader } from '@angular/compiler';
   providedIn: 'root'
 })
 export class SellerdetailsService {
-  API_URL = 'https://ecomm-orcin.vercel.app/';
+  API_URL = 'https://ecomm-orcin.vercel.app';
   isSellerLoggedIn = new BehaviorSubject<boolean>(true);
   isLoginError = new EventEmitter<boolean>(false);
   constructor(private _http: HttpClient, private router: Router) { }

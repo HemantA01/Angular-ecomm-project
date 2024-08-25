@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  API_URL = 'https://ecomm-orcin.vercel.app/'; 
+  API_URL = 'https://ecomm-orcin.vercel.app'; 
   cartData = new EventEmitter<IProductDetails[] | []>();
   constructor(private _http: HttpClient) { }
   addProduct(data: IProductDetails){
